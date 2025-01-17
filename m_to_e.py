@@ -10,12 +10,12 @@ parser.add_argument('md',
                      )
 
 args = parser.parse_args()
-print(args)
-print(args.md)
+# print(args)
+# print(args.md)
 
 file_markdown = args.md
 
-print(file_markdown, os.path.isfile(file_markdown),os.path.exists(file_markdown))
+# print(file_markdown, os.path.isfile(file_markdown),os.path.exists(file_markdown))
 
 
 def convert_to_egea(markdown_text):
@@ -64,13 +64,11 @@ def convert_to_egea(markdown_text):
 if __name__ == "__main__":
     if os.path.isfile(file_markdown) and os.path.exists(file_markdown):
         print("файл существует")
-        # f = open(file_markdown,'r')
-        # f.close
         with open(file_markdown,'r',encoding='utf-8') as f:
             markdown_text = f.read()
         # print(markdown_text)
         egea_text = convert_to_egea(markdown_text)
-        print("Тест для эгеи")
+        print("Тест для Эгеи")
         print(egea_text)
         file_egea=f"{file_markdown}_egea.txt"
         with open(file_egea,'w',encoding='utf-8') as f:
