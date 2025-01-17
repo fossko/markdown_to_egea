@@ -61,22 +61,22 @@ def convert_to_egea(markdown_text):
 
 
 
+if __name__ == "__main__":
+    if os.path.isfile(file_markdown) and os.path.exists(file_markdown):
+        print("файл существует")
+        # f = open(file_markdown,'r')
+        # f.close
+        with open(file_markdown,'r',encoding='utf-8') as f:
+            markdown_text = f.read()
+        # print(markdown_text)
+        egea_text = convert_to_egea(markdown_text)
+        print("Тест для эгеи")
+        print(egea_text)
+        file_egea=f"{file_markdown}_egea.txt"
+        with open(file_egea,'w',encoding='utf-8') as f:
+            f.write(egea_text)
 
-if os.path.isfile(file_markdown) and os.path.exists(file_markdown):
-    print("файл существует")
-    # f = open(file_markdown,'r')
-    # f.close
-    with open(file_markdown,'r',encoding='utf-8') as f:
-        markdown_text = f.read()
-    # print(markdown_text)
-    egea_text = convert_to_egea(markdown_text)
-    print("Тест для эгеи")
-    print(egea_text)
-    file_egea=f"{file_markdown}_egea.txt"
-    with open(file_egea,'w',encoding='utf-8') as f:
-        f.write(egea_text)
-
-else:
-    print("файл не найден")
+    else:
+        print("файл не найден")
 
 
